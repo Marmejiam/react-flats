@@ -3,12 +3,14 @@ import GoogleMapReact from 'google-map-react';
 import Marker from './marker';
 
 
+
 class GoogleMap extends Component {
   render() {
     const center = this.props.lat && this.props.lng
       ? { lat: this.props.lat, lng: this.props.lng }
       : GoogleMap.defaultProps.center;
 
+console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
@@ -23,6 +25,8 @@ class GoogleMap extends Component {
     );
   }
 }
+
+
 
 GoogleMap.defaultProps = {
   center: {
