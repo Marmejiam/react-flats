@@ -10,7 +10,7 @@ class GoogleMap extends Component {
       ? { lat: this.props.lat, lng: this.props.lng }
       : GoogleMap.defaultProps.center;
 
-console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact

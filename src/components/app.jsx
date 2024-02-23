@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   selectedFlat = (lat, lng) => {
-    console.log(lat,lng);
+
     this.setState({
       lat: lat,
       lng: lng
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+   
     return (
       <div>
         <FlatsList flats={this.state.flats} selectedFlatFormul={this.selectedFlat} />
