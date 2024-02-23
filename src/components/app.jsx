@@ -16,24 +16,25 @@ class App extends Component {
     this.state = {
       lat: "",
       lng: "",
-      flats
+      flats,
+      selectedFlat: null
     }
 
   }
 
   selectedFlat = (lat, lng) => {
-
     this.setState({
       lat: lat,
-      lng: lng
+      lng: lng,
+      selectedFlat: flats.find(flat => flat.lat === lat && flat.lng === lng)
     });
   }
 
   render() {
-   
+
     return (
       <div>
-        <FlatsList flats={this.state.flats} selectedFlatFormul={this.selectedFlat} />
+        <FlatsList flats={this.state.flats} selectedFlat={this.state.selectedFlat} selectedFlatFormul={this.selectedFlat} />
         <div className="map-container">
           <GoogleMap lat={this.state.lat} lng={this.state.lng}/>
         </div>

@@ -8,7 +8,7 @@ handleClick = () => {
 }
   render() {
     return (
-      <div className="card"
+      <div className={`card${this.props.selected ? ' active' : ''}`}
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${this.props.flat.imageUrl})`
         }} >

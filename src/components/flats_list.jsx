@@ -5,7 +5,8 @@ class FlatsList extends Component {
 
 renderList = () => {
   return this.props.flats.map(flat => {
-    return <Flat flat={flat} key={flat.name} flatClicked={this.props.selectedFlatFormul} />
+    const isSelected = this.props.selectedFlat && flat.name === this.props.selectedFlat.name;
+    return <Flat flat={flat} key={flat.name} selected={isSelected} flatClicked={this.props.selectedFlatFormul} />
   })
 }
   render() {
